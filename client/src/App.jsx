@@ -3,13 +3,14 @@ import { BrowserRouter, Routes, Route, Navigate } from "react-router-dom"; // Im
 import HeaderComp from "./components/HeaderComp";
 import FooterComp from "./components/FooterComp";
 import StudentPage from "./pages/StudentPage";
-import Table3 from "./pages/Table3";
 import EmployeePage from "./pages/EmployeePage";
+import AgriculturePage from "./pages/AgriculturePage";
 
 const App = () => {
   const [tableVisible, setTableVisible] = useState(true); // State to toggle table visibility
   const [clickedStudent, setClickedStudent] = useState(null); // State for clicked student
   const [clickedEmployee, setClickedEmployee] = useState(null);
+  const [clickedAgriculture, setClickedAgriculture] = useState(null);
 
   return (
     <BrowserRouter>
@@ -35,11 +36,20 @@ const App = () => {
             />
           }
         />
-        <Route path="/table3" element={<Table3 />} />
+        <Route
+          path="/agriculture"
+          element={
+            <AgriculturePage
+              tableVisible={tableVisible}
+              setClickedAgriculture={setClickedAgriculture}
+            />
+          }
+        />
       </Routes>
       <FooterComp
         clickedStudent={clickedStudent}
         clickedEmployee={clickedEmployee}
+        clickedAgriculture={clickedAgriculture}
       />
     </BrowserRouter>
   );

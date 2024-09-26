@@ -36,10 +36,10 @@ const NavbarComp = ({ onToggle, isOpen }) => {
           EmployeeTable
         </Navbar.Link>
         <Navbar.Link
-          href="/table3"
-          className={`hover:text-blue-500 ${getActiveClass("/table3")}`}
+          href="/agriculture"
+          className={`hover:text-blue-500 ${getActiveClass("/agriculture")}`}
         >
-          Table3
+          AgricultureTable
         </Navbar.Link>
       </Navbar.Collapse>
     </Navbar>
