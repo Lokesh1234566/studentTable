@@ -3,9 +3,8 @@ import React, { useState, useEffect } from "react";
 import { Navbar } from "flowbite-react";
 import { useLocation } from "react-router-dom";
 
-const NavbarComp = ({ onToggle, isOpen }) => {
+const NavbarComp = ({ onToggle, isOpen, setActiveTable, activeTable }) => {
   const location = useLocation(); // Get current route
-  const [activeTable, setActiveTable] = useState("StudentTable"); // Default to StudentTable
 
   useEffect(() => {
     // Update the activeTable based on the current route
@@ -19,17 +18,17 @@ const NavbarComp = ({ onToggle, isOpen }) => {
       default:
         setActiveTable("StudentTable");
     }
-  }, [location.pathname]);
+  }, [location.pathname, setActiveTable]);
 
   const getActiveClass = (path) => {
     return location.pathname === path ? "text-blue-600 underline" : "";
   };
 
   return (
-    <Navbar fluid rounded>
+    <Navbar fluid rounded className="h-[9vh] sm:h-[10vh] bg-slate-50">
       <Navbar.Brand href="/">
         <span className="self-center whitespace-nowrap text-xl font-semibold cursor-pointer hover:text-blue-500">
-          {activeTable} {/* Display the active table name */}
+          {activeTable}
         </span>
       </Navbar.Brand>
       <div className="flex md:order-2">

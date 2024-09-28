@@ -5,6 +5,7 @@ const FooterComp = ({
   clickedStudent,
   clickedEmployee,
   clickedAgriculture,
+  activeTable,
 }) => {
   const renderDetails = (entity, entityType) => {
     if (entity) {
@@ -31,7 +32,7 @@ const FooterComp = ({
 
   return (
     <div className="fixed bottom-0 left-0 right-0 bg-gray-300 md:p-1 h-[20vh]">
-      <div className="mb-1 ml-2 h-[13vh] sm:h-[10vh] md:[h-13vh]">
+      <div className="mb-1 ml-2 h-[15vh] sm:h-[13vh] md:[h-13vh]">
         {clickedStudent ? (
           renderDetails(clickedStudent, "student")
         ) : clickedEmployee ? (
@@ -42,8 +43,9 @@ const FooterComp = ({
           <p>No entity selected yet</p>
         )}
       </div>
+
       <div className="font-bold text-slate-700 text-sm md:text-lg">
-        <marquee>Welcome to college website @ 2024</marquee>
+        <marquee>Welcome to {activeTable} website @ 2024</marquee>
       </div>
     </div>
   );

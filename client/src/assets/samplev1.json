@@ -1,4 +1,12 @@
 {
+  "company_details": {
+    "company_name": "Tech Innovations",
+    "email": "contact@techinnovations.com",
+    "phone": "1234567890",
+    "address": "123 Tech Road, Silicon Valley",
+    "pincode": "94043"
+  },
+
   "student_details": [
     {
       "id": 1,
